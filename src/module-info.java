@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author zjbre
+ *
+ */
+module MyFirstProject {
+}
