@@ -2,9 +2,11 @@ package nyc.codingtutor;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
-public class Week4LabPart1 {
+public class Week4Lab {
 
 	public static void main(String[] args) {
 		// strings cannot be changed (immutable) - the underlying object assigned to a variable can never be changed.  When concatenate to a string, we are actually creating a new string in memory.  String builder is mutable.
@@ -36,17 +38,28 @@ public class Week4LabPart1 {
 		names.add("Q");
 //		System.out.println(getShortestStringFromList(names));
 //		System.out.println(names);
-		System.out.println("------------------");
+//		System.out.println("------------------");
 //		System.out.println(switchFirstLast(names));
 //		System.out.println(listIntoString(names));
 //		System.out.println(findStringsInList(names, "e"));
+		
+		Set<String> states = new HashSet<String>();
+		states.add("Alabama");
+		states.add("New York");
+		states.add("Arizona");
+		states.add("Arkansas");
+		states.add("California");
 		
 		
 		List<Integer> numbers = new ArrayList<Integer>();
 		Collections.addAll(numbers, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 		
 		
-		System.out.println(findDivisibleNumbers(numbers));
+//		System.out.println(findDivisibleNumbers(numbers));
+		
+//		System.out.println(findStringLengths(states));
+		
+		System.out.println(findStartingLetter(states, 'A'));
 	}
 	
 	public static String getShortestStringFromList(List<String> list) {
@@ -128,7 +141,28 @@ public class Week4LabPart1 {
 		return result;
 	}
 	
+	public static List<Integer> findStringLengths(Set<String> strings){
+		List<Integer> result = new ArrayList<Integer>();
+		
+		for (String item : strings) {
+			System.out.println("State: ");
+			System.out.println(item);
+			result.add(item.length());
+		}
+		
+		return result;
+	}
 	
+	public static Set<String> findStartingLetter(Set<String> words, char ch){
+		Set<String> result = new HashSet<String>();
+		for (String word : words) {
+			if (word.charAt(0) == ch) {
+				result.add(word);
+			}
+		}
+		
+		return result;
+	}
 	 
 
 }
