@@ -2,8 +2,10 @@ package nyc.codingtutor;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 public class Week4Lab {
@@ -35,6 +37,7 @@ public class Week4Lab {
 		names.add("Henry");
 		names.add("Xi");
 		names.add("Zach");
+		names.add("Zoe");
 		names.add("Q");
 //		System.out.println(getShortestStringFromList(names));
 //		System.out.println(names);
@@ -52,14 +55,32 @@ public class Week4Lab {
 		
 		
 		List<Integer> numbers = new ArrayList<Integer>();
+		Set<Integer> numbersSet = new HashSet<Integer>();
 		Collections.addAll(numbers, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+		Collections.addAll(numbersSet, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 		
 		
 //		System.out.println(findDivisibleNumbers(numbers));
 		
 //		System.out.println(findStringLengths(states));
 		
-		System.out.println(findStartingLetter(states, 'A'));
+//		System.out.println(findStartingLetter(states, 'A'));
+		
+//		System.out.println(setToList(states));
+		
+//		System.out.println(findEvens(numbersSet));
+		
+		Map<String, String> definitions = new HashMap<String, String>();
+		definitions.put("Hot", "Not cold.");
+		definitions.put("Cold", "Not hot.");
+		definitions.put("Medium", "Not cold and not hot.");
+		
+//		System.out.println(definitions.get("Hot"));
+		
+//		System.out.println(findDefinition(definitions, "Hott"));
+		
+		System.out.println(findZWords(names));
+		
 	}
 	
 	public static String getShortestStringFromList(List<String> list) {
@@ -162,6 +183,58 @@ public class Week4Lab {
 		}
 		
 		return result;
+	}
+	
+	public static List<String> setToList(Set<String> set){
+		List<String> result = new ArrayList<String>();
+		
+		for (String word : set) {
+			result.add(word);
+		}
+		
+		return result;
+		
+	}
+	
+	public static Set<Integer> findEvens(Set<Integer> set){
+		Set<Integer> results = new HashSet<Integer>();
+		
+		for (int i : set) {
+			if (i % 2 == 0) {
+				results.add(i);
+			}
+		}
+		
+		return results;
+	}
+	
+	public static String findDefinition(Map<String, String> dictionary, String word) {
+//		StringBuilder d = new StringBuilder();
+		
+		for (String w : dictionary.keySet()) {
+			if (w.equals(word)) {
+				return dictionary.get(w);
+			}
+		}
+		
+		return "Definition not found.";
+	}
+	
+	public static Map<Character, Integer> findZWords(List<String> list){
+		Map<Character, Integer> result = new HashMap<Character, Integer>();
+
+		for (String word : list) {
+			if (result.containsKey(word.charAt(0)) == false) {
+				result.put(word.charAt(0), 1);
+			} else {
+				Integer newValue = result.get(word.charAt(0)) + 1;
+				result.put(word.charAt(0), newValue);
+			}
+
+		}
+		
+		return result;
+		
 	}
 	 
 
