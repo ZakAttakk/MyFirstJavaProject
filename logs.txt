@@ -1,0 +1,4 @@
+INFO: Sun Dec 18 20:50:49 EST 2022 - Hello
+WARNING: Sun Dec 18 20:50:49 EST 2022 - This is a a warning
+ERROR: Sun Dec 18 20:50:49 EST 2022 - Oops, this is an error
+FATAL: Sun Dec 18 20:50:49 EST 2022 - Fatal error

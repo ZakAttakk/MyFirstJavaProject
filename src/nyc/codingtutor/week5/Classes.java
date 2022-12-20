@@ -5,10 +5,10 @@ public class Classes {
 	public static void main(String[] args) {
 		
 		Student student1 = new Student();
-		student1.firstName = "Tom";
-		student1.lastName = "Smith";
-		student1.gradeLevel = 12;
-		student1.phoneNumber = "345-236-7234";
+//		student1.firstName = "Tom";
+//		student1.lastName = "Smith";
+//		student1.gradeLevel = 12;
+//		student1.phoneNumber = "345-236-7234";
 		
 //		student1.introduce();
 		
