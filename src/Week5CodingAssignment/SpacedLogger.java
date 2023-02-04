@@ -24,7 +24,7 @@ public class SpacedLogger implements Logger {
 				result.append(" ");
 			}
 		}
-		System.out.println("ERROR: *** " + result + "***");
+		System.out.println("ERROR: *** " + result + " ***");
 		
 	}
 	
